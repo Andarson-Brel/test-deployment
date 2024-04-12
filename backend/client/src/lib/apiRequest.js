@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-  baseURL: "http://localhost:8800/api",
+  baseURL: "https://test-deployment-wxap.onrender.com/api",
   withCredentials: true,
 });
 
