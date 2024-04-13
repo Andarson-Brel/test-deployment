@@ -15,12 +15,12 @@ function ListPage() {
           <Filter />
           <Suspense fallback={<p>Loading...</p>}>
             <Await
-              resolve={data.postResponse}
+              resolve={data?.postResponse}
               errorElement={<p>Error loading posts!</p>}
             >
               {(postResponse) =>
-                postResponse.data.map((post) => (
-                  <Card key={post.id} item={post} />
+                postResponse?.data?.map((post) => (
+                  <Card key={post?.id} item={post} />
                 ))
               }
             </Await>
@@ -30,10 +30,10 @@ function ListPage() {
       <div className="mapContainer">
         <Suspense fallback={<p>Loading...</p>}>
           <Await
-            resolve={data.postResponse}
+            resolve={data?.postResponse}
             errorElement={<p>Error loading posts!</p>}
           >
-            {(postResponse) => <Map items={postResponse.data} />}
+            {(postResponse) => <Map items={postResponse?.data} />}
           </Await>
         </Suspense>
       </div>
